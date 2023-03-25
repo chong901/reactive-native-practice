@@ -1,3 +1,4 @@
+import { ScreenHeaderButton } from "app/components/atoms/ScreenHeaderButton";
 import { COLORS, SIZES } from "constants/theme";
 import { Stack } from "expo-router";
 import { ScrollView, Text, View } from "react-native";
@@ -30,8 +31,6 @@ export default function Page() {
     </SafeAreaView>
   );
 }
-
-const ScreenHeaderButton = () => <Text>Screen header button</Text>;
 
 const Welcome = () => <Text>Welcome</Text>;
 
