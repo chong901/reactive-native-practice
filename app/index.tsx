@@ -1,4 +1,6 @@
 import { ScreenHeaderButton } from "app/components/atoms/ScreenHeaderButton";
+import icons from "constants/icons";
+import images from "constants/images";
 import { COLORS, SIZES } from "constants/theme";
 import { Stack } from "expo-router";
 import { ScrollView, Text, View } from "react-native";
@@ -11,8 +13,12 @@ export default function Page() {
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
-          headerLeft: () => <ScreenHeaderButton />,
-          headerRight: () => <ScreenHeaderButton />,
+          headerLeft: () => (
+            <ScreenHeaderButton iconUrl={icons.menu} dimension="60%" />
+          ),
+          headerRight: () => (
+            <ScreenHeaderButton iconUrl={images.profile} dimension="100%" />
+          ),
           headerTitle: "",
         }}
       />
