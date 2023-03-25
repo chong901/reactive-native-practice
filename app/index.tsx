@@ -8,7 +8,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Page() {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+    <SafeAreaView
+      edges={["bottom", "left", "right"]}
+      style={{
+        flex: 1,
+        backgroundColor: COLORS.lightWhite,
+      }}
+    >
       <Stack.Screen
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
