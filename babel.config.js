@@ -10,7 +10,7 @@ module.exports = function (api) {
         "module-resolver",
         {
           alias: {
-            src: "./src",
+            app: "./app",
             assets: "./assets",
             styles: "./styles",
             constants: "./constants",
