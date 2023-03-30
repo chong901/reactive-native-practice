@@ -6,7 +6,7 @@ const rapidApiKey = RAPID_API_KEY;
 export const useFetch = <T>(path: string, params: Record<string, unknown>) => {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<unknown>(null);
   const options = {
     method: "GET",
     url: `https://jsearch.p.rapidapi.com/${path}`,
