@@ -6,7 +6,8 @@
       "assets/*": ["assets/*"],
       "styles/*": ["styles/*"],
       "constants/*": ["constants/*"]
-    }
+    },
+    "strict": true
   },
   "extends": "expo/tsconfig.base"
 }
