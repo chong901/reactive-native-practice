@@ -1,9 +1,10 @@
 import { ScreenHeaderButton } from "app/components/atoms/ScreenHeaderButton";
+import { Welcome } from "app/components/organisms/Welcome";
 import icons from "constants/icons";
 import images from "constants/images";
 import { COLORS, SIZES } from "constants/theme";
 import { Stack } from "expo-router";
-import { ScrollView, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Page() {
@@ -28,23 +29,20 @@ export default function Page() {
           headerTitle: "",
         }}
       />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View
-          style={{
-            flex: 1,
-            padding: SIZES.medium,
-          }}
-        >
-          <Welcome />
-          <PopularJobs />
-          <NearbyJobs />
-        </View>
-      </ScrollView>
+      <View
+        style={{
+          flex: 1,
+          padding: SIZES.medium,
+          alignContent: "flex-start",
+        }}
+      >
+        <Welcome />
+        <PopularJobs />
+        <NearbyJobs />
+      </View>
     </SafeAreaView>
   );
 }
-
-const Welcome = () => <Text>Welcome</Text>;
 
 const PopularJobs = () => <Text>Popular jobs</Text>;
 const NearbyJobs = () => <Text>Nearby jobs</Text>;
