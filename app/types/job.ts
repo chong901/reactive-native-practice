@@ -1,0 +1,56 @@
+export type Job = {
+  employer_name: string;
+  employer_logo: string;
+  employer_website: string;
+  employer_company_type: string;
+  job_publisher: string;
+  job_id: string;
+  job_employment_type: string;
+  job_title: string;
+  job_apply_link: string;
+  job_apply_is_direct: Boolean;
+  job_apply_quality_score: Number;
+  job_description: string;
+  job_is_remote: Boolean;
+  job_posted_at_timestamp: Number;
+  job_posted_at_datetime_utc: string;
+  job_city: string;
+  job_state: string;
+  job_country: string;
+  job_latitude: Number;
+  job_longitude: Number;
+  job_benefits: null;
+  job_google_link: string;
+  job_offer_expiration_datetime_utc: string;
+  job_offer_expiration_timestamp: Number;
+  job_required_experience: {
+    no_experience_required: Boolean;
+    required_experience_in_months: Number;
+    experience_mentioned: Boolean;
+    experience_preferred: Boolean;
+  };
+  job_required_skills: null;
+  job_required_education: {
+    postgraduate_degree: Boolean;
+    professional_certification: Boolean;
+    high_school: Boolean;
+    associates_degree: Boolean;
+    bachelors_degree: Boolean;
+    degree_mentioned: Boolean;
+    degree_preferred: Boolean;
+    professional_certification_mentioned: Boolean;
+  };
+  job_experience_in_place_of_education: Boolean;
+  job_min_salary: null;
+  job_max_salary: null;
+  job_salary_currency: null;
+  job_salary_period: null;
+  job_highlights: {
+    Qualifications: Array<string>;
+    Responsibilities: Array<string>;
+  };
+  job_job_title: null;
+  job_posting_language: string;
+  job_onet_soc: string;
+  job_onet_job_zone: string;
+};
