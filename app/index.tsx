@@ -1,4 +1,5 @@
 import { ScreenHeaderButton } from "app/components/atoms/ScreenHeaderButton";
+import { PopularJobs } from "app/components/organisms/PopularJobs";
 import { Welcome } from "app/components/organisms/Welcome";
 import icons from "constants/icons";
 import images from "constants/images";
@@ -44,5 +45,4 @@ export default function Page() {
   );
 }
 
-const PopularJobs = () => <Text>Popular jobs</Text>;
 const NearbyJobs = () => <Text>Nearby jobs</Text>;
