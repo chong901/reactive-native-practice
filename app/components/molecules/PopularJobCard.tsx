@@ -1,5 +1,6 @@
 import { Job } from "app/types/job";
 import { COLORS, FONT, SHADOWS, SIZES } from "constants/theme";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
   Image,
@@ -86,8 +87,12 @@ type Props = {
 
 export const PopularJobCard = ({ job, selectedJob }: Props) => {
   const [isImageError, setIsImageError] = useState(false);
+  const router = useRouter();
   return (
-    <TouchableOpacity style={getContainerStyle(selectedJob, job)}>
+    <TouchableOpacity
+      style={getContainerStyle(selectedJob, job)}
+      onPress={() => router.push(`/job-details/${job.job_id}`)}
+    >
       <View style={getLogoContainerStyle(selectedJob, job)}>
         <Image
           source={{

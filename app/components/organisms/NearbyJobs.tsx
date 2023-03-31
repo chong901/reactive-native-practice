@@ -1,4 +1,4 @@
-import { PopularJobCard } from "app/components/molecules/PopularJobCard";
+import { NearbyJobCard } from "app/components/molecules/NearbyJobCard";
 import { Job } from "app/types/job";
 import { COLORS, FONT, SIZES } from "constants/theme";
 import {
@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
   container: {
@@ -18,6 +17,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginTop: SIZES.small,
   },
   headerTitle: {
     fontSize: SIZES.large,
@@ -31,12 +31,13 @@ const styles = StyleSheet.create({
   },
   cardsContainer: {
     marginTop: SIZES.medium,
+    gap: SIZES.small,
   },
 });
 
-export const PopularJobs = ({
-  error,
+export const NearbyJobs = ({
   jobs,
+  error,
 }: {
   jobs?: Job[];
   error?: unknown;
@@ -44,7 +45,7 @@ export const PopularJobs = ({
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Popular jobs</Text>
+        <Text style={styles.headerTitle}>Nearby jobs</Text>
         <TouchableOpacity>
           <Text style={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
@@ -55,13 +56,9 @@ export const PopularJobs = ({
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
-          <FlatList
-            data={jobs}
-            renderItem={({ item }) => <PopularJobCard job={item} />}
-            keyExtractor={(item) => item.job_id}
-            horizontal
-            contentContainerStyle={{ columnGap: SIZES.medium }}
-          />
+          jobs.map((job) => (
+            <NearbyJobCard key={`nearby-job-${job.job_id}`} job={job} />
+          ))
         )}
       </View>
     </View>
