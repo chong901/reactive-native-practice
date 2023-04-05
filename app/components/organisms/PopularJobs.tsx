@@ -1,13 +1,8 @@
+import { DefaultActivityIndicator } from "app/components/atoms/DefaultActivityIndicator";
 import { PopularJobCard } from "app/components/molecules/PopularJobCard";
 import { Job } from "app/types/job";
 import { COLORS, FONT, SIZES } from "constants/theme";
-import {
-  ActivityIndicator,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
@@ -51,7 +46,7 @@ export const PopularJobs = ({
       </View>
       <View style={styles.cardsContainer}>
         {!jobs ? (
-          <ActivityIndicator size="large" color={COLORS.primary} />
+          <DefaultActivityIndicator />
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
